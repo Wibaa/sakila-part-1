@@ -1,0 +1,194 @@
+A) mysql> select * from language order by name;
++-------------+----------+---------------------+
+| language_id | name     | last_update         |
++-------------+----------+---------------------+
+|           1 | English  | 2006-02-15 05:02:19 |
+|           5 | French   | 2006-02-15 05:02:19 |
+|           6 | German   | 2006-02-15 05:02:19 |
+|           2 | Italian  | 2006-02-15 05:02:19 |
+|           3 | Japanese | 2006-02-15 05:02:19 |
+|           4 | Mandarin | 2006-02-15 05:02:19 |
++-------------+----------+---------------------+
+
+B) mysql> select title from film_list where actors like '%Temple%';
++-------------------------+
+| title                   |
++-------------------------+
+| ACADEMY DINOSAUR        |
+| AFRICAN EGG             |
+| ALABAMA DEVIL           |
+| ATTACKS HATE            |
+| BADMAN DAWN             |
+| BALLOON HOMEWARD        |
+| BANG KWAI               |
+| BEACH HEARTBREAKERS     |
+| BILL OTHERS             |
+| BLANKET BEVERLY         |
+| BREAKFAST GOLDFINGER    |
+| BUCKET BROTHERHOOD      |
+| BUTTERFLY CHOCOLAT      |
+| CANDIDATE PERDITION     |
+| CANYON STOCK            |
+| CAPER MOTIONS           |
+| CAROL TEXAS             |
+| CARRIE BUNCH            |
+| CASUALTIES ENCINO       |
+| CHASING FIGHT           |
+| CHICAGO NORTH           |
+| CHITTY LOCK             |
+| CHRISTMAS MOONSHINE     |
+| CITIZEN SHREK           |
+| CLOSER BANG             |
+| COAST RAINBOW           |
+| COMFORTS RUSH           |
+| CONNECTION MICROCOSMOS  |
+| CONTACT ANONYMOUS       |
+| CRAZY HOME              |
+| CROSSROADS CASUALTIES   |
+| DROP WATERFRONT         |
+| EARLY HOME              |
+| ENGLISH BULWORTH        |
+| EVOLUTION ALTER         |
+| FELLOWSHIP AUTUMN       |
+| FROGMEN BREAKING        |
+| GALAXY SWEETHEARTS      |
+| GATHERING CALENDAR      |
+| GHOST GROUNDHOG         |
+| GILMORE BOILED          |
+| GLORY TRACY             |
+| GOLD RIVER              |
+| GRAPES FURY             |
+| GUMP DATE               |
+| HEAVYWEIGHTS BEAST      |
+| HOCUS FRIDA             |
+| ICE CROSSING            |
+| INDIAN LOVE             |
+| INSIDER ARIZONA         |
+| INTERVIEW LIAISONS      |
+| JADE BUNCH              |
+| JUMANJI BLADE           |
+| JUNGLE CLOSER           |
+| LAMBS CINCINATTI        |
+| LIAISONS SWEET          |
+| LOVER TRUMAN            |
+| LOVERBOY ATTACKS        |
+| MADISON TRAP            |
+| MICROCOSMOS PARADISE    |
+| MIGHTY LUCK             |
+| MILE MULAN              |
+| NOVOCAINE FLIGHT        |
+| PELICAN COMFORTS        |
+| PLATOON INSTINCT        |
+| POLLOCK DELIVERANCE     |
+| PRIMARY GLASS           |
+| RACER EGG               |
+| RANDOM GO               |
+| REQUIEM TYCOON          |
+| RESURRECTION SILVERADO  |
+| ROSES TREASURE          |
+| SANTA PARIS             |
+| SHAKESPEARE SADDLE      |
+| SLEUTH ORIENT           |
+| SLUMS DUCK              |
+| SMILE EARRING           |
+| SPIKING ELEMENT         |
+| SPOILERS HELLFIGHTERS   |
+| STRAIGHT HOURS          |
+| TELEGRAPH VOYAGE        |
+| TOWERS HURRICANE        |
+| TRAINSPOTTING STRANGERS |
+| TROJAN TOMORROW         |
+| TROOPERS METAL          |
+| UNCUT SUICIDES          |
+| VARSITY TRIP            |
+| VIRGINIAN PLUTO         |
+| VISION TORQUE           |
+| VOLCANO TEXAS           |
+| WAIT CIDER              |
+| WARDROBE PHANTOM        |
+| WARS PLUTO              |
+| WASH HEAVENLY           |
+| WIZARD COLDBLOODED      |
+| WRATH MILE              |
+| WRONG BEHAVIOR          |
++-------------------------+
+
+C) mysql> select actors from film_list where title like '%ghost groundhog%';
++---------------------------------------------------------------------+
+| actors                                                              |
++---------------------------------------------------------------------+
+| DAN HARRIS, KENNETH TORN, KEVIN GARLAND, RUSSELL TEMPLE, RENEE BALL |
++---------------------------------------------------------------------+
+
+D) mysql> select count(*) as lukumaara from film_category where category_id ='11';
++-----------+
+| lukumaara |
++-----------+
+|        56 |
++-----------+
+
+E) mysql> select film.title,category.name
+    -> from film
+    -> join film_category on film.film_id = film_category.film_id
+    -> join category on category.category_id = film_category.category_id
+    -> where category.name = 'horror' ;
++-----------------------------+--------+
+| title                       | name   |
++-----------------------------+--------+
+| ACE GOLDFINGER              | Horror |
+| AFFAIR PREJUDICE            | Horror |
+| AIRPORT POLLOCK             | Horror |
+| ALABAMA DEVIL               | Horror |
+| ALI FOREVER                 | Horror |
+| ANALYZE HOOSIERS            | Horror |
+| ANYTHING SAVANNAH           | Horror |
+| ARABIA DOGMA                | Horror |
+| ARACHNOPHOBIA ROLLERCOASTER | Horror |
+| BEHAVIOR RUNAWAY            | Horror |
+| BOWFINGER GABLES            | Horror |
+| CARRIE BUNCH                | Horror |
+| COMMANDMENTS EXPRESS        | Horror |
+| DESERT POSEIDON             | Horror |
+| DRUMS DYNAMITE              | Horror |
+| EGYPT TENENBAUMS            | Horror |
+| ELEPHANT TROJAN             | Horror |
+| FAMILY SWEET                | Horror |
+| FIDELITY DEVIL              | Horror |
+| FREDDY STORM                | Horror |
+| GASLIGHT CRUSADE            | Horror |
+| HIGH ENCINO                 | Horror |
+| JAPANESE RUN                | Horror |
+| KARATE MOON                 | Horror |
+| KENTUCKIAN GIANT            | Horror |
+| LADY STAGE                  | Horror |
+| LOLA AGENT                  | Horror |
+| LOVE SUICIDES               | Horror |
+| MONTEREY LABYRINTH          | Horror |
+| MOTIONS DETAILS             | Horror |
+| PANIC CLUB                  | Horror |
+| PARIS WEEKEND               | Horror |
+| PATTON INTERVIEW            | Horror |
+| PULP BEVERLY                | Horror |
+| REAP UNFAITHFUL             | Horror |
+| REEF SALUTE                 | Horror |
+| ROCK INSTINCT               | Horror |
+| ROLLERCOASTER BRINGING      | Horror |
+| RULES HUMAN                 | Horror |
+| SIMON NORTH                 | Horror |
+| SINNERS ATLANTIS            | Horror |
+| SLEEPING SUSPECTS           | Horror |
+| SPIRIT FLINTSTONES          | Horror |
+| STRANGERS GRAFFITI          | Horror |
+| STREETCAR INTENTIONS        | Horror |
+| SWARM GOLD                  | Horror |
+| TARZAN VIDEOTAPE            | Horror |
+| TEMPLE ATTRACTION           | Horror |
+| TEXAS WATCH                 | Horror |
+| TRAIN BUNCH                 | Horror |
+| TREASURE COMMAND            | Horror |
+| UNDEFEATED DALMATIONS       | Horror |
+| WATERSHIP FRONTIER          | Horror |
+| WORLD LEATHERNECKS          | Horror |
+| YENTL IDAHO                 | Horror |
+| ZHIVAGO CORE                | Horror |
++-----------------------------+--------+
